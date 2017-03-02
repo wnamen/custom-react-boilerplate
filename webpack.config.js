@@ -28,14 +28,14 @@ module.exports = {
     filename: "index.min.js"
   },
   plugins: [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.DefinePlugin({
-       'process.env': {
-         NODE_ENV: JSON.stringify('production')
-       }
-      }),
-    new webpack.optimize.UglifyJsPlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
+    // new webpack.optimize.DedupePlugin(),
+    // new webpack.DefinePlugin({
+    //    'process.env': {
+    //      NODE_ENV: JSON.stringify('production')
+    //    }
+    //   }),
+    // new webpack.optimize.UglifyJsPlugin(),
+    // new webpack.optimize.OccurenceOrderPlugin(),
     new ExtractTextPlugin("styles.css")
   ],
   resolve: {

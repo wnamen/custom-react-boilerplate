@@ -1,3 +1,4 @@
+@import url("./normalize.css");
 @import url("./color.css");
 @import url("./grid.css");
 
@@ -6,6 +7,10 @@
 @import url("./nav.css");
 @import url("./settings.css");
 
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+}
 h1,h2,h3 {
   font-family: 'Lato', sans-serif;
   font-weight: 700;
@@ -23,33 +28,58 @@ a{
   color: #36b7ea;
   cursor: pointer;
 }
-body {
-  font-family: 'Open Sans', sans-serif;
-}
 strong{
   font-weight: 700 !important;
-}
-.text-center{
-  text-align: center !important;
-}
-.text-left{
-  text-align: left !important;
-}
-.text-right{
-  text-align: right !important;
 }
 .page-container {
   margin-top: 2em;
 }
+.inline-block{
+  display: inline-block;
+}
+.flex-row-center{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.flex-column-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.flex-row-spread {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-column-spread {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.left {
+  float: left !important;
+}
+.right {
+  float: right !important;
+}
+.hide {
+  display: none !important;
+}
+
+
+/*BORDER STYLING*/
 
 .small-border {
   border: 1px solid;
 }
-
 .small-left-border {
   border-left: 1px solid;
 }
-
 .small-top-border {
   border-top: 1px solid;
 }
@@ -79,60 +109,55 @@ strong{
 .medium-right-border {
   border-right: 2px solid;
 }
-.inline-block{
-  display: inline-block;
+
+/*FONT SIZING by EM*/
+
+.font-size-one {
+  font-size: 1em;
 }
-.hidden{
-  display: none;
+
+.font-size-one-and-half {
+  font-size: 1.5em;
 }
-.hundredHeight{
-  height: 100%;
-}
-.full-width{
-  width: 100%;
-}
-.pushRight{
-  float: right;
-}
-strong.largeText{
+
+.font-size-two {
   font-size: 2em;
 }
 
+.font-size-two-and-half {
+  font-size: 2.5em;
+}
+
+.font-size-three {
+  font-size: 3em;
+}
+
+.font-size-four {
+  font-size: 4em;
+}
+
+.font-size-five {
+  font-size: 5em;
+}
+
+.font-size-six {
+  font-size: 6em;
+}
+
+.font-size-seven {
+  font-size: 7em;
+}
+
+/*FONT STYLING*/
+.text-center{
+  text-align: center !important;
+}
+.text-left{
+  text-align: left !important;
+}
+.text-right{
+  text-align: right !important;
+}
 .capitalize{
     text-transform: capitalize;
-}
-
-.flex-center{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-a[href="https://froala.com/wysiwyg-editor"] {
-    display: none !important;
-}
-
-@keyframes failedValidation {
-  0%, 100%{
-    border-color:#36b7ea;
-  }
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-    border-color:#fb615d;
-  }
-
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
-}
-.failedValidation{
-  animation: failedValidation 0.82s cubic-bezier(.36,.07,.19,.97) both;
-  transform: translate3d(0, 0, 0);
 }

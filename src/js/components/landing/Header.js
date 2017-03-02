@@ -18,9 +18,9 @@ export default class Header extends React.Component {
 
     return(
       <div class="sixteen">
-        <section class="hero electric-blue-light-background text-center">
-          <h1 class="hh heroH1">React Boilerplate</h1>
-          <h6 class="gray text-center hh heroH6">Start building with React today!</h6>
+        <section class="header-container electric-blue-light-background flex-column-center">
+          <h1 class="font-size-four">React Boilerplate</h1>
+          <h6 class="gray font-size-one-and-half">Start building with React today!</h6>
         </section>
       </div>
     )

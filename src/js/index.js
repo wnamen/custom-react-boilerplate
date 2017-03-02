@@ -1,9 +1,8 @@
 import React                                           from "react";
 import ReactDOM                                        from "react-dom";
 import { Router, Route, IndexRoute, browserHistory }   from "react-router";
-// import cookie                                          from "react-cookie";
 import $                                               from "jquery";
-// import HttpProvider                                    from "./httpProvider";
+// import cookie                                          from "react-cookie";
 
 import Layout                                          from "./pages/Layout";
 import Landing                                         from "./pages/Landing";
@@ -87,7 +86,3 @@ ReactDOM.render(
     </Route>
   </Router>, App
 );
-
-
-// <HttpProvider token={token}>
-// </HttpProvider>

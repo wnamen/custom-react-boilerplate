@@ -1,3 +1,18 @@
+.navbar-fixed {
+  position: relative;
+  height: 56px;
+  z-index: 997;
+}
+
+.navbar-fixed nav {
+  position: fixed;
+}
+
+nav .nav-wrapper {
+  position: relative;
+  height: 100%;
+}
+
 .smlBtnLg {
   padding: 0px 15px;
   border: 1px solid;

@@ -14,9 +14,11 @@ class Nav extends Component {
     return (
         <nav class="navbar navbar-fixed white-background">
           <div class="nav-wrapper medium-vertical-padding">
-            <ul id="nav-links" class="nav-hover">
-              <li><IndexLink class="medium-right-border gray-border" to="/" ><strong>Home</strong></IndexLink></li>
-            </ul>
+            <div class="left">
+              <ul id="nav-links" class="nav-hover">
+                <li><IndexLink class="medium-right-border gray-border" to="/" ><strong>Home</strong></IndexLink></li>
+              </ul>
+            </div>
 
             <div class="right">
               <ul>
