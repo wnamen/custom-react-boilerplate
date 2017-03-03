@@ -10,7 +10,7 @@ class Settings extends React.Component {
   render = () => {
     return (
       <div class="ten offset-by-three white-background settingsCard">
-        <h6 class="small-vertical-margin">Settings</h6>
+        <h6 class="small-vertical-margin font-size-two">Settings</h6>
       </div>
     );
   }
