@@ -16,7 +16,7 @@ export default class Footer extends React.Component {
     //RENDER LOGIC HERE
 
     return(
-      <div class="sixteen columns gray-light-background">
+      <div class="sixteen gray-light-background">
         <div class="text-center footer-container">
         </div>
       </div>

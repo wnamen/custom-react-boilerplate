@@ -1,0 +1,52 @@
+
+/*FONT SIZING by EM*/
+
+.font-size-one {
+  font-size: 1em;
+}
+
+.font-size-one-and-half {
+  font-size: 1.5em;
+}
+
+.font-size-two {
+  font-size: 2em;
+}
+
+.font-size-two-and-half {
+  font-size: 2.5em;
+}
+
+.font-size-three {
+  font-size: 3em;
+}
+
+.font-size-four {
+  font-size: 4em;
+}
+
+.font-size-five {
+  font-size: 5em;
+}
+
+.font-size-six {
+  font-size: 6em;
+}
+
+.font-size-seven {
+  font-size: 7em;
+}
+
+/*FONT STYLING*/
+.text-center{
+  text-align: center !important;
+}
+.text-left{
+  text-align: left !important;
+}
+.text-right{
+  text-align: right !important;
+}
+.capitalize{
+    text-transform: capitalize;
+}

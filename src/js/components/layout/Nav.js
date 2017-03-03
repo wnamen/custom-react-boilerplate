@@ -12,16 +12,17 @@ class Nav extends Component {
   render() {
 
     return (
-        <nav class="navbar navbar-fixed white-background">
-          <div class="nav-wrapper medium-vertical-padding">
-            <div class="left">
-              <ul id="nav-links" class="nav-hover">
-                <li><IndexLink class="medium-right-border gray-border" to="/" ><strong>Home</strong></IndexLink></li>
+        <nav class="navbar-fixed white-background">
+          <div class="flex-row-spread">
+            <div class="nav-left">
+              <ul class="nav-links nav-hover large-left-padding medium-right-padding">
+                <li><IndexLink to="/" ><strong>Home</strong></IndexLink></li>
               </ul>
+              <div class="medium-right-border gray-border"></div>
             </div>
 
-            <div class="right">
-              <ul>
+            <div class="nav-right">
+              <ul class="nav-links">
                 <li id="settings-button" class="large-right-margin nav-hover">
                   <IndexLink class="black" to="/settings" activeClassName="active"><i class="gray-medium-2 fa fa-user-circle fa-2x" aria-hidden="true"></i></IndexLink>
                 </li>
