@@ -12,3 +12,16 @@ For those who are looking for something without the training wheels of "create-r
 1. Run "npm install" to install dependencies
 2. Run "nodemon" to start the server
 3. In another window, run "webpack --watch" to bundle the app. Upon any changes in the code, webpack will automatically rebundle. Just refresh the page!
+
+### Core Technologies
+
+1. axios
+2. babel
+3. express
+3. mongoDB
+4. nodemon
+5. react
+6. react-router
+7. redux
+8. redux-thunk
+9. webpack
