@@ -2,8 +2,7 @@ import React                                           from 'react';
 import ReactDOM                                        from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory }   from 'react-router';
 import { Provider }                                    from 'react-redux';
-import configureStore                                  from './store/store';
-import $                                               from 'jquery';
+import configureStore                                  from './store/configureStore';
 
 import Layout                                          from './pages/Layout';
 import Landing                                         from './pages/Landing';

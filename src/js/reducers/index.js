@@ -1,8 +1,9 @@
-import { combineReducers } from 'redux';
-import FakeReducer from './fake';
+import { combineReducers }    from 'redux';
+import page                   from './page'
+
 
 const rootReducer = combineReducers({
-  fake: FakeReducer
-});
+  page
+})
 
-export default rootReducer;
+export default rootReducer
