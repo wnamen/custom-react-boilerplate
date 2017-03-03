@@ -1,9 +1,9 @@
 import { combineReducers }    from 'redux';
-import tutorial                   from './tutorial'
+import tutorials                   from './tutorials'
 
 
 const rootReducer = combineReducers({
-  tutorial
+  tutorials
 })
 
 export default rootReducer

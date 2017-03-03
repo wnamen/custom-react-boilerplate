@@ -2,11 +2,11 @@ import React                                           from 'react';
 import ReactDOM                                        from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory }   from 'react-router';
 import { Provider }                                    from 'react-redux';
-import configureStore                                  from './store/configureStore';
+import configureStore                                  from './configureStore';
 
 import Layout                                          from './pages/Layout';
 import Landing                                         from './pages/Landing';
-import Page                                            from './pages/Page';
+import Tutorial                                        from './pages/Tutorial';
 import Settings                                        from './pages/Settings';
 import ServerError                                     from './pages/ServerError';
 import NotFound                                        from './pages/NotFound';
@@ -21,7 +21,7 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Route path="/" component={Layout} >
         <IndexRoute component={Landing} />
-        <Route path="page" name="page" component={Page} />
+        <Route path="tutorials" name="tutorials" component={Tutorial} />
         <Route path="settings" name="settings" component={Settings} />
         <Route path="500" name="serverError" component={ServerError} />
         <Route path="*" name="notFound" component={NotFound} />

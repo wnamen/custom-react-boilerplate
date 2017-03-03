@@ -28,6 +28,7 @@ hr{
 a{
   color: #36b7ea;
   cursor: pointer;
+  text-decoration: none;
 }
 strong{
   font-weight: 700 !important;

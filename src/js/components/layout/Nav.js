@@ -16,7 +16,7 @@ class Nav extends React.Component {
               </ul>
               <div class="medium-right-border gray-border"></div>
               <ul class="nav-links nav-hover medium-left-padding">
-                <li><IndexLink to="/page" >Page</IndexLink></li>
+                <li><IndexLink to="/tutorials" >Tutorials</IndexLink></li>
               </ul>
             </div>
             <div class="nav-right">
