@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // api routes
 app.get('/api', controllers.api.index);
 app.get('/api/tutorials', controllers.tutorials.index);
+app.get('/api/users', controllers.users.index);
 
 // route catch all
 app.get('*', function (req, res) {
