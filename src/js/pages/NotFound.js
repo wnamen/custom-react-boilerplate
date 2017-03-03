@@ -2,8 +2,7 @@ import React             from 'react';
 import { IndexLink }     from 'react-router';
 
 class NotFound extends React.Component {
-
-  render() {
+  render = () => {
     return (
     	<div class="ten offset-by-three white-background card flex-row-center">
 				<div class="nine columns flex-column-center">

@@ -2,20 +2,22 @@ import React, { Component }           from 'react';
 import { IndexLink }                  from 'react-router';
 
 class Nav extends React.Component {
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
   }
 
   render = () => {
-
     return (
         <nav class="navbar-fixed white-background">
           <div class="flex-row-spread">
             <div class="nav-left">
               <ul class="nav-links nav-hover large-left-padding medium-right-padding">
-                <li><IndexLink to="/" ><strong>Home</strong></IndexLink></li>
+                <li><IndexLink to="/" ><strong>React Boilerplate</strong></IndexLink></li>
               </ul>
               <div class="medium-right-border gray-border"></div>
+              <ul class="nav-links nav-hover medium-left-padding">
+                <li><IndexLink to="/page" >Page</IndexLink></li>
+              </ul>
             </div>
             <div class="nav-right">
               <ul class="nav-links">
