@@ -5,6 +5,10 @@ class Page extends React.Component {
     return (
       <div class="ten offset-by-three white-background card">
         <h6 class="small-vertical-margin font-size-two">Page</h6>
+
+        <div>
+          
+        </div>
       </div>
     );
   }

@@ -1,9 +1,9 @@
 // This file allows us to seed our application with data
 // simply run: `node seed.js` from the root of this project folder.
 
-var db = require("./models");
+const db = require("./models");
 
-var tutorialList =[
+const tutorialList =[
   {
     name: 'React Tutorial Series',
     url: 'https://www.youtube.com/watch?v=MhkGQAoc7bc&list=PLoYCgNOIyGABj2GQSlDRjgvXtqfDxKm5b',
