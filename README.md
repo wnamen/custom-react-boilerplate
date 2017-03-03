@@ -7,17 +7,8 @@ For those who are looking for something without the training wheels of "create-r
 2. Node @ v6.5.0
 3. Webpack installed globally
 
-### Recommended Requirements
-1. Nodemon installed globally
-
 ### Development Instructions
 
 1. Run "npm install" to install dependencies
-2. In a separate window, run node server.js to start the server
-3. Upon any changes in the code, run "webpack" to bundle the app
-4. Then restart the server
-
-If Nodemon is installed globally:
-1. Run "npm install" to install dependencies
-2. In a separate window, run nodemon to start the server
-3. Upon any changes in the code, run "webpack" to bundle the app
+2. Run "nodemon" to start the server
+3. In another window, run "webpack --watch" to bundle the app. Upon any changes in the code, webpack will automatically rebundle. Just refresh the page!
