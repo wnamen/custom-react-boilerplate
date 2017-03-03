@@ -11,14 +11,16 @@ var db = require("./database/models");
 app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// api routes
 app.get('/api', controllers.api.index);
+app.get('/api/tutorials', controllers.tutorials.index);
 
-// send all requests to index.html so browserHistory in React Router works
+// route catch all
 app.get('*', function (req, res) {
   res.sendFile(__dirname + '/public/index.html')
 })
 
-
+// port
 app.set('port', (process.env.PORT || 6969));
 app.listen(app.get('port'), function () {
     console.log('Server has started! http://localhost:' + app.get('port') + '/');
