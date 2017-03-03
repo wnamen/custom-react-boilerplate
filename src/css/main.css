@@ -35,8 +35,13 @@ strong{
 .page-container {
   margin-top: 2em;
 }
-.inline-block{
-  display: inline-block;
+.card {
+	padding:2em;
+	border: 1px solid #ececec;
+	height: 75vh;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	max-width: 796px;
 }
 .flex-row-center{
     display: flex;
@@ -70,6 +75,23 @@ strong{
 }
 .hide {
   display: none !important;
+}
+
+.active {
+  text-decoration: none;
+}
+
+.button-empty {
+  padding: 10px;
+  border: 1px solid;
+  cursor: pointer;
+  opacity: .8;
+}
+
+.button-empty:hover {
+  background-color: #d7f1fb;
+  -webkit-transition: background-color .5s, opacity .5s;
+  transition: background-color .5s, opacity .5s;
 }
 
 
