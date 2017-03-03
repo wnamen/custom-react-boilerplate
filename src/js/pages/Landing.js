@@ -1,19 +1,19 @@
-import React, { Component }       from "react";
+import React, { Component }       from 'react';
 
-import Header                     from "../components/landing/Header"
-import Footer                     from "../components/landing/Footer"
+import Header                     from '../components/landing/Header'
+import Footer                     from '../components/landing/Footer'
 
-const Landing = () => {
-
-  return (
-    <div class="gray-light-background">
-      <div class="sixteen inline-block">
-        <Header />
-        <Footer />
+class Landing extends React.Component {
+  render = () => {
+    return (
+      <div class="gray-light-background">
+        <div class="sixteen inline-block">
+          <Header />
+          <Footer />
+        </div>
       </div>
-    </div>
-
-  );
+    );
+  }
 };
 
 export default Landing;

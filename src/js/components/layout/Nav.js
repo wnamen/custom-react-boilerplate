@@ -1,15 +1,12 @@
-import React, { Component, PropTypes }  from "react";
-import { IndexLink }                    from "react-router";
-import cookie                           from "react-cookie";
+import React, { Component }           from 'react';
+import { IndexLink }                  from 'react-router';
 
-
-class Nav extends Component {
-
+class Nav extends React.Component {
   constructor(props, context) {
     super(props, context);
   }
 
-  render() {
+  render = () => {
 
     return (
         <nav class="navbar-fixed white-background">
@@ -20,7 +17,6 @@ class Nav extends Component {
               </ul>
               <div class="medium-right-border gray-border"></div>
             </div>
-
             <div class="nav-right">
               <ul class="nav-links">
                 <li id="settings-button" class="large-right-margin nav-hover">

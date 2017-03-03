@@ -1,21 +1,11 @@
-import React, { Component } from "react"
-import $ from "jquery"
+import React, { Component }         from 'react';
 
-
-// IMPORT OTHER COMPONENTS AND DEPENDENCIES HERE
-
-export default class Header extends React.Component {
+class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      // COMPONENT STATE DECLARTION HERE
-    }
   }
-  //LOGIC HERE: CHECK OUT COMPONENT MOUNTING IF YOU WANT TO TRY IT OUT
 
-  render(){
-    //RENDER LOGIC HERE
-
+  render = () => {
     return(
       <div class="sixteen">
         <section class="header-container electric-blue-light-background flex-column-center">
@@ -26,3 +16,5 @@ export default class Header extends React.Component {
     )
   }
 }
+
+export default Header;

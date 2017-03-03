@@ -1,22 +1,17 @@
-import React, { PropTypes, Component }        from "react";
-import $                                      from "jquery";
-import cookie                                 from "react-cookie";
+import React, { Component }                   from 'react';
+import $                                      from 'jquery';
+import cookie                                 from 'react-cookie';
 
-class Settings extends Component {
-
+class Settings extends React.Component {
   constructor(props) {
     super(props);
   }
 
-
-  render() {
-
+  render = () => {
     return (
       <div class="ten offset-by-three white-background settingsCard">
-        <h6>Settings</h6>
-
+        <h6 class="small-vertical-margin">Settings</h6>
       </div>
-
     );
   }
 }
