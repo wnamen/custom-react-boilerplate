@@ -5,6 +5,7 @@ class Footer extends React.Component {
     return(
       <div class="sixteen gray-light-background">
         <div class="text-center footer-container">
+          Made with &hearts; by Will and Matt
         </div>
       </div>
     )

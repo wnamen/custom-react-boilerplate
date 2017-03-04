@@ -11,8 +11,8 @@ const userJWT = {
 	jwt: "alksdfjalkfjdsiqopurewpqiruwealskjdf"
 }
 
-const index = () => {
-	console.log("Brah Why we no use ES6 when we are compiling our code anyways!")
+function index(req, res){
+	res.json({message: "Brah Why we no use ES6 when we are compiling our code anyways!"})
 }
 
 
