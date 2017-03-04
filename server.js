@@ -1,3 +1,7 @@
+// TODO: Add passport passport-jwt passport-local (auth)
+// TODO: Then set up local strategy with passport
+// TODO: Add jsonwebtoken crypto (auth)
+
 // server.js
 var express = require('express'),
     path = require('path'),
@@ -9,7 +13,7 @@ var db = require("./database/models");
 
 // serve our static stuff like index.css
 app.use(express.static(__dirname));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // api routes
 app.get('/api', controllers.api.index);
