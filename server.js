@@ -3,13 +3,13 @@
 // TODO: Add jsonwebtoken crypto (auth)
 
 // server.js
-var express = require('express'),
-    path = require('path'),
-    bodyParser = require('body-parser');
+const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser');
 
-var app = express();
-var controllers = require('./database/controllers');
-var db = require("./database/models");
+const app = express();
+const controllers = require('./database/controllers');
+const db = require("./database/models");
 
 // serve our static stuff like index.css
 app.use(express.static(__dirname));
