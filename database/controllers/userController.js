@@ -11,10 +11,9 @@ const userJWT = {
 	jwt: "alksdfjalkfjdsiqopurewpqiruwealskjdf"
 }
 
-function index(req, res){
-	res.json({message: "Brah Why we no use ES6 when we are compiling our code anyways!"})
-}
-
+index = (req, res) => {
+	res.json({message: "Brah Why we no use ES6 when we are compiling our code anyways!"});
+};
 
 module.exports = {
 	index: index
