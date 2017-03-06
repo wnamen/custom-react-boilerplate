@@ -9,7 +9,7 @@
     "mongoose": "^4.8.5"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "devDependencies": {
     "axios": "^0.15.3",

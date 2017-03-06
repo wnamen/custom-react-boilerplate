@@ -16,8 +16,8 @@ app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({ extended: true }))
 
 // api routes
-// app.get('/api', controllers.api.index);
-// app.get('/api/tutorials', controllers.tutorials.index);
+app.get('/api', controllers.api.index);
+app.get('/api/tutorials', controllers.tutorials.index);
 // app.get('/api/user', controllers.user.index);
 
 // Enable CORS from client-side

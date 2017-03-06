@@ -16,4 +16,6 @@ function index(req, res){
 }
 
 
-module.exports = userJWT;
+module.exports = {
+	index: index
+};
