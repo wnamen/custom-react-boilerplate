@@ -27,9 +27,9 @@ export default function reducer(state={
         }
       }
       case "UPDATE_TUTORIAL": {
-        const { id, text } = action.payload
+        const { id, name, url } = action.payload
         const newTutorials = [...state.tutorials]
-        const tutorialToUpdate = newTutorials.findIndex(tutorial => tutorial.id === id)
+        const tutorialToUpdate = newTutorials.findIndex(tutorial => tutorial._id === id)
         newTutorials[tutorialToUpdate] = action.payload;
 
         return {
@@ -40,7 +40,7 @@ export default function reducer(state={
       case "DELETE_TUTORIAL": {
         return {
           ...state,
-          tutorials: state.tutorials.filter(tutorial => tutorial.id !== action.payload),
+          tutorials: state.tutorials.filter(tutorial => tutorial._id !== action.payload),
         }
       }
     }
