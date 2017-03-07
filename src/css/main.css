@@ -89,7 +89,16 @@ strong{
   opacity: .8;
 }
 
-.button-empty:hover {
+.landing-button-empty {
+  width: 80px;
+  padding: 10px;
+  border: 1px solid;
+  background-color: white;
+  cursor: pointer;
+  opacity: .8;
+}
+
+.button-empty:hover, .landing-button-empty:hover {
   background-color: #d7f1fb;
   -webkit-transition: background-color .5s, opacity .5s;
   transition: background-color .5s, opacity .5s;
