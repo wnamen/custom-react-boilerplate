@@ -7,7 +7,14 @@
   display: flex;
 }
 
+.nav-left {
+  display: flex;
+}
+
+
 .nav-links {
+  display: flex;
+  align-items: center;
   list-style-type: none;
 }
 

@@ -1,5 +1,5 @@
 import React, { Component }       from 'react';
-import TutorialsList              from '../components/page/TutorialsList';
+import TutorialsList              from '../components/tutorial/TutorialsList';
 
 class Tutorial extends React.Component {
   render = () => {

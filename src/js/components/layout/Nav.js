@@ -21,9 +21,9 @@ class Nav extends React.Component {
             </div>
             <div class="nav-right">
               <ul class="nav-links">
-                <li id="settings-button" class="large-right-margin nav-hover">
-                  <IndexLink class="black" to="/settings" activeClassName="active"><i class="gray-medium-2 fa fa-user-circle fa-2x" aria-hidden="true"></i></IndexLink>
-                </li>
+                <li class="medium-horizontal-margin"><IndexLink to="/signup">Sign Up</IndexLink></li>
+                <li class="medium-horizontal-margin"><IndexLink to="/login">Login</IndexLink></li>
+                <li class="large-horizontal-margin nav-hover"><IndexLink class="black" to="/settings" activeClassName="active"><i class="gray-medium-2 fa fa-user-circle fa-2x" aria-hidden="true"></i></IndexLink></li>
               </ul>
             </div>
           </div>
