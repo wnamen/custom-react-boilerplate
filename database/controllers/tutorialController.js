@@ -4,7 +4,7 @@
  ************/
 const db = require("../models");
 
-function index(req, res) {
+index = (req, res) => {
   db.Tutorial.find({}, function(err, tutorials) {
     res.json(tutorials);
   });

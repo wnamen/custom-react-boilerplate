@@ -5,7 +5,9 @@
 // NOTE: This will just be an api because React and Redux will handle everything on the front end
 
 const userJWT = {
-	username: "Benny Jam",
+	first: "Benny",
+	last: "Jam",
+	email: "bj@gmail.com",
 	password: "KingBenjaminThe4th",
 	created_at: "Date Huuurrr",
 	jwt: "alksdfjalkfjdsiqopurewpqiruwealskjdf"
