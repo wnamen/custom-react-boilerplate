@@ -1,6 +1,7 @@
 import React, { Component }       from 'react';
 import Input                      from '../components/forms/Input';
 import Button                     from '../components/forms/Button';
+import axios                      from 'axios';
 
 class Login extends React.Component {
   constructor(props) {
@@ -26,6 +27,9 @@ class Login extends React.Component {
       console.log('bad info', form);
     } else {
       console.log('good info', form);
+      axios.post('/api/user/login', form)
+        .then(this.context.router.push('/'))
+        .catch(error => console.log(error))
     }
   }
 
@@ -46,6 +50,10 @@ class Login extends React.Component {
       </div>
     );
   }
+};
+
+Login.contextTypes = {
+  router: React.PropTypes.object
 };
 
 export default Login;

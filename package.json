@@ -3,11 +3,15 @@
   "version": "0.1.1",
   "private": true,
   "dependencies": {
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.17.0",
     "express": "^4.14.0",
+    "jsonwebtoken": "^7.3.0",
     "mongodb": "^2.2.24",
     "mongoose": "^4.8.5",
-    "passport": "^0.3.2"
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.2.1",
+    "passport-local": "^1.0.0"
   },
   "scripts": {
     "start": "nodemon server.js"

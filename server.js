@@ -1,4 +1,4 @@
-// TODO: Add passport & passport-jwt & passport-local (auth)
+// TODO: Add passport & passport-jwt & passport-local (auth) - DONE
 // TODO: Then set up local strategy with passport
 // TODO: Add jsonwebtoken & crypto (auth)
 
@@ -6,6 +6,8 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;;
 
 const app = express();
 const controllers = require('./database/controllers');
@@ -13,12 +15,15 @@ const db = require("./database/models");
 
 // serve our static stuff like index.css
 app.use(express.static(__dirname));
+app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(passport.initialize());
 
 // api routes
 app.get('/api', controllers.api.index);
 app.get('/api/tutorials', controllers.tutorials.index);
 app.get('/api/user', controllers.user.index);
+app.post('/api/user/login', controllers.user.login)
 
 // Enable CORS from client-side
 app.use(function(req, res, next) {
