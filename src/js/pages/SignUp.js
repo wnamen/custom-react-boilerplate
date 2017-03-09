@@ -1,15 +1,15 @@
 import React, { Component }       from 'react';
 import Input                      from '../components/forms/Input';
 import Button                     from '../components/forms/Button';
-
+import axios                      from 'axios';
 
 class SignUp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       formData: {
-        first: '',
-        last: '',
+        firstName: '',
+        lastName: '',
         email: '',
         password: '',
         confirm: ''
@@ -28,6 +28,9 @@ class SignUp extends React.Component {
 
     if (form.password === form.confirm) {
       console.log('good info', form);
+      axios.post('/api/user/signup', form)
+        .then(this.context.router.push('/'))
+        .catch(error => console.log(error))
     } else {
       console.log('bad info', form);
     }
@@ -37,10 +40,10 @@ class SignUp extends React.Component {
     return (
       <div class="ten offset-by-three white-background card">
         <form class="flex-column-center large-vertical-margin">
-          <h6 class="small-vertical-margin font-size-two">SignUp</h6>
+          <h6 class="small-vertical-margin font-size-two">Sign Up</h6>
           <div class="large-margin large-padding gray-light-background electric-blue-border small-border">
-            <Input type="text" name="first" placeholder="First Name" label="First Name" onChange={this.handleFormData}/>
-            <Input type="text" name="last" placeholder="Last Name" label="Last Name" onChange={this.handleFormData}/>
+            <Input type="text" name="firstName" placeholder="First Name" label="First Name" onChange={this.handleFormData}/>
+            <Input type="text" name="lastName" placeholder="Last Name" label="Last Name" onChange={this.handleFormData}/>
             <Input type="text" name="email" placeholder="Email Address" label="Email Address" onChange={this.handleFormData}/>
             <Input type="text" name="password" placeholder="Password" label="Password" onChange={this.handleFormData}/>
             <Input type="text" name="confirm" placeholder="Confirm Password" label="Confirm Password" onChange={this.handleFormData}/>
@@ -53,6 +56,10 @@ class SignUp extends React.Component {
       </div>
     );
   }
+};
+
+SignUp.contextTypes = {
+  router: React.PropTypes.object
 };
 
 export default SignUp;

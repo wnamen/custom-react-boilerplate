@@ -7,11 +7,12 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;;
+const jwt = require('jsonwebtoken');
 
 const app = express();
 const controllers = require('./database/controllers');
 const db = require("./database/models");
+const config = require('./database/config/main');
 
 // serve our static stuff like index.css
 app.use(express.static(__dirname));
@@ -19,11 +20,8 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(passport.initialize());
 
-// api routes
-app.get('/api', controllers.api.index);
-app.get('/api/tutorials', controllers.tutorials.index);
-app.get('/api/user', controllers.user.index);
-app.post('/api/user/login', controllers.user.login)
+// Bring in defined Passport Strategy
+require('./database/config/passport')(passport);
 
 // Enable CORS from client-side
 app.use(function(req, res, next) {
@@ -33,6 +31,13 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Credentials", "true");
   next();
 });
+
+// api routes
+app.get('/api', controllers.api.index);
+app.get('/api/tutorials', controllers.tutorials.index);
+app.get('/api/user', controllers.user.index);
+app.post('/api/user/signup', controllers.user.signup)
+app.post('/api/user/login', controllers.user.login)
 
 // route catch all
 app.get('*', function (req, res) {
