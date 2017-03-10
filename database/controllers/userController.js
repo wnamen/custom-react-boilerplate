@@ -1,9 +1,3 @@
-// TODO: Import database for users - DONE
-// TODO: Create the logic for api to handle a request and create a JWT
-// TODO: Need to add bcrypt & Passport jwt ( there might be anther thing to use ) - DONE
-// NOTE: This file is just of single auth for 1 user, create separte file for other user logic
-// NOTE: This will just be an api because React and Redux will handle everything on the front end
-
 const User = require("../models/user");
 const passport = require('passport');
 const crypto = require('crypto');

@@ -2,6 +2,7 @@ import React, { Component }       from 'react';
 import Input                      from '../components/forms/Input';
 import Button                     from '../components/forms/Button';
 import axios                      from 'axios';
+import cookie                     from 'react-cookie';
 
 class Login extends React.Component {
   constructor(props) {
@@ -28,9 +29,14 @@ class Login extends React.Component {
     } else {
       console.log('good info', form);
       axios.post('/api/user/login', form)
-        .then(this.context.router.push('/'))
+        .then(response => this.handleSuccess(response.token))
         .catch(error => console.log(error))
     }
+  }
+
+  handleSuccess = () => {
+    cookie.save('auth', token, { path: '/' });
+    this.context.router.push('/')
   }
 
   render = () => {
