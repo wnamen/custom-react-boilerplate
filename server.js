@@ -5,10 +5,10 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 
-const app = express();
 const controllers = require('./database/controllers');
 const db = require("./database/models");
 const config = require('./database/config/main');
+const app = express();
 
 // serve our static stuff like index.css
 app.use(express.static(__dirname));
@@ -22,7 +22,7 @@ const requireAuth = passport.authenticate('jwt', { session: false });
 const requireLogin = passport.authenticate('local', { session: false });
 
 // Enable CORS from client-side
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization, Access-Control-Allow-Credentials");
@@ -38,12 +38,12 @@ app.post('/api/user/signup', controllers.user.signup)
 app.post('/api/user/login', requireLogin, controllers.user.login)
 
 // route catch all
-app.get('*', function (req, res) {
+app.get('*', (req, res) => {
   res.sendFile(__dirname + '/public/index.html')
 })
 
 // port
 app.set('port', (process.env.PORT || 6969));
-app.listen(app.get('port'), function () {
+app.listen(app.get('port'), () => {
     console.log('Server has started! http://localhost:' + app.get('port') + '/');
 });

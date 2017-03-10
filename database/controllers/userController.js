@@ -1,12 +1,11 @@
 const User = require("../models/user");
-const passport = require('passport');
 const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
 const config = require('../config/main');
 
 generateToken = (user) => {
   return jwt.sign(user, config.secret, {
-    expiresIn: 2592000000 
+    expiresIn: 2592000000
   });
 }
 
@@ -67,7 +66,7 @@ signup = (req, res) => {
 
 			// Respond with JWT if user was created
       res.status(201).json({
-        token: 'JWT ' + generateToken(userInfo),
+        token: generateToken(userInfo),
         user: userInfo
       });
     });
@@ -75,11 +74,10 @@ signup = (req, res) => {
 }
 
 login = (req, res) => {
-  console.log(req.user);
 	let userInfo = setUserInfo(req.user);
 
   res.status(200).json({
-    token: 'JWT ' + generateToken(userInfo),
+    token: generateToken(userInfo),
     user: userInfo
   });
 }

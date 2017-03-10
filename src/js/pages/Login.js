@@ -27,15 +27,14 @@ class Login extends React.Component {
     if ((form.password === '') || (form.email === '')) {
       console.log('bad info', form);
     } else {
-      console.log('good info', form);
       axios.post('/api/user/login', form)
-        .then(response => this.handleSuccess(response.token))
+        .then(response => this.handleSuccess(response.data.token))
         .catch(error => console.log(error))
     }
   }
 
-  handleSuccess = () => {
-    cookie.save('auth', token, { path: '/' });
+  handleSuccess = (token) => {
+    cookie.save('Token', token, { path: '/' });
     this.context.router.push('/')
   }
 

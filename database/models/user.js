@@ -35,8 +35,8 @@ UserSchema.pre('save', function(next) {
 });
 
 // Create method to compare password input to password saved in database
-UserSchema.methods.comparePassword = (pw, cb) => {
-  bcrypt.compare(pw, this.password, (err, isMatch) => {
+UserSchema.methods.comparePassword = (pw, hash, cb) => {
+  bcrypt.compare(pw, hash, (err, isMatch) => {
     if (err) {
       return cb(err);
     }

@@ -28,17 +28,14 @@ class SignUp extends React.Component {
     let form = this.state.formData;
 
     if (form.password === form.confirm) {
-      console.log('good info', form);
       axios.post('/api/user/signup', form)
-        .then(response => this.handleSuccess(response.token))
+        .then(response => this.handleSuccess(response.data.token))
         .catch(error => console.log(error))
-    } else {
-      console.log('bad info', form);
     }
   }
 
   handleSuccess = (token) => {
-    cookie.save('auth', token, { path: '/' });
+    cookie.save('Token', token, { path: '/' });
     this.context.router.push('/')
   }
 
