@@ -6,17 +6,23 @@
 
 const User = require("../models/user");
 const passport = require('passport');
-const bcrypt = require('bcrypt');
+const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
 const config = require('../config/main');
 
-const userJWT = {
-	first: "Benny",
-	last: "Jam",
-	email: "bj@gmail.com",
-	password: "KingBenjaminThe4th",
-	created_at: "Date Huuurrr",
-	jwt: "alksdfjalkfjdsiqopurewpqiruwealskjdf"
+generateToken = (user) => {
+  return jwt.sign(user, config.secret, {
+    expiresIn: 10080 // in seconds
+  });
+}
+
+setUserInfo = (request) => {
+  return {
+    _id: request._id,
+    firstName: request.firstName,
+    lastName: request.lastName,
+    email: request.email
+  };
 }
 
 index = (req, res) => {
@@ -24,52 +30,63 @@ index = (req, res) => {
 };
 
 signup = (req, res) => {
-  if(!req.body.email || !req.body.password) {
-    res.json({ success: false, message: 'Please enter email and password.' });
-  } else {
-    let newUser = new User({
-			firstName: req.body.firstName,
-			lastName: req.body.lastName,
-      email: req.body.email,
-      password: req.body.password
+	const email = req.body.email;
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
+  const password = req.body.password;
+
+  // Return error if no email provided
+  if (!email) {
+    return res.status(422).send({ error: 'You must enter an email address.'});
+  }
+
+  // Return error if full name not provided
+  if (!firstName || !lastName) {
+    return res.status(422).send({ error: 'You must enter your full name.'});
+  }
+
+  // Return error if no password provided
+  if (!password) {
+    return res.status(422).send({ error: 'You must enter a password.' });
+  }
+
+  User.findOne({ email: email }, (err, existingUser) => {
+    if (err) { return next(err); }
+
+    // If user is not unique, return error
+    if (existingUser) {
+      return res.status(422).send({ error: 'That email address is already in use.' });
+    }
+
+    // If email is unique and password was provided, create account
+    let user = new User({
+			firstName: firstName,
+			lastName: lastName,
+      email: email,
+      password: password
     });
 
-    // Attempt to save the user
-    newUser.save((err) => {
-      if (err) {
-        return res.json({ success: false, message: 'That email address already exists.'});
-      }
-      res.json({ success: true, message: 'Successfully created new user.' });
+    user.save((err, user) => {
+      if (err) { return next(err); }
+
+      let userInfo = setUserInfo(user);
+
+			// Respond with JWT if user was created
+      res.status(201).json({
+        token: 'JWT ' + generateToken(userInfo),
+        user: userInfo
+      });
     });
-  }
-};
+  });
+}
 
 login = (req, res) => {
-	// console.log(req.body);
-	// res.send('success')
+	let userInfo = setUserInfo(req.user);
 
-	db.User.findOne({
-		email: req.body.email
-	}, (err, user) => {
-		if (err) throw err;
-
-		if (!user) {
-			res.send({ success: false, message: 'Authentication failed. User not found.' });
-		} else {
-			// Check if password matches
-			user.comparePassword(req.body.password, (err, isMatch) => {
-				if (isMatch && !err) {
-					// Create token if the password matched and no error was thrown
-					let token = jwt.sign(user, config.secret, {
-						expiresIn: 10080 // in seconds
-					});
-					res.json({ success: true, token: 'JWT ' + token });
-				} else {
-					res.send({ success: false, message: 'Authentication failed. Passwords did not match.' });
-				}
-			});
-		}
-	});
+  res.status(200).json({
+    token: 'JWT ' + generateToken(userInfo),
+    user: userInfo
+  });
 }
 
 
