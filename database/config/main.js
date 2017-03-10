@@ -1,4 +1,5 @@
 module.exports = {
-'secret': 'customreactboilerplateisawesome',
-'database': 'mongodb://127.0.0.1:27017/custom-react-boilerplate'  
+  secret: 'customreactboilerplateisawesome',
+  database: 'mongodb://localhost:27017',
+  port: 6969,
 };

@@ -6,7 +6,7 @@ const config = require('../config/main');
 
 generateToken = (user) => {
   return jwt.sign(user, config.secret, {
-    expiresIn: 10080 // in seconds
+    expiresIn: 2592000000 
   });
 }
 
@@ -75,6 +75,7 @@ signup = (req, res) => {
 }
 
 login = (req, res) => {
+  console.log(req.user);
 	let userInfo = setUserInfo(req.user);
 
   res.status(200).json({
