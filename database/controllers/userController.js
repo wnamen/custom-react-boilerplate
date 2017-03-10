@@ -4,7 +4,7 @@
 // NOTE: This file is just of single auth for 1 user, create separte file for other user logic
 // NOTE: This will just be an api because React and Redux will handle everything on the front end
 
-const db = require("../models");
+const User = require("../models/user");
 const passport = require('passport');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -27,7 +27,7 @@ signup = (req, res) => {
   if(!req.body.email || !req.body.password) {
     res.json({ success: false, message: 'Please enter email and password.' });
   } else {
-    let newUser = new db.User({
+    let newUser = new User({
 			firstName: req.body.firstName,
 			lastName: req.body.lastName,
       email: req.body.email,

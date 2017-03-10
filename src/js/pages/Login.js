@@ -39,8 +39,8 @@ class Login extends React.Component {
         <form class="flex-column-center large-vertical-margin">
           <h6 class="small-vertical-margin font-size-two">Login</h6>
           <div class="large-margin large-padding gray-light-background electric-blue-border small-border">
-            <Input type="text" name="email" placeholder="Email Address" label="Email Address" onChange={this.handleFormData}/>
-            <Input type="text" name="password" placeholder="Password" label="Password" onChange={this.handleFormData}/>
+            <Input type="email" name="email" label="Email Address" onChange={this.handleFormData}/>
+            <Input type="password" name="password" label="Password" onChange={this.handleFormData}/>
           </div>
           <div class="flex-row-spread">
             <Button value="Cancel" />

@@ -42,11 +42,11 @@ class SignUp extends React.Component {
         <form class="flex-column-center large-vertical-margin">
           <h6 class="small-vertical-margin font-size-two">Sign Up</h6>
           <div class="large-margin large-padding gray-light-background electric-blue-border small-border">
-            <Input type="text" name="firstName" placeholder="First Name" label="First Name" onChange={this.handleFormData}/>
-            <Input type="text" name="lastName" placeholder="Last Name" label="Last Name" onChange={this.handleFormData}/>
-            <Input type="text" name="email" placeholder="Email Address" label="Email Address" onChange={this.handleFormData}/>
-            <Input type="text" name="password" placeholder="Password" label="Password" onChange={this.handleFormData}/>
-            <Input type="text" name="confirm" placeholder="Confirm Password" label="Confirm Password" onChange={this.handleFormData}/>
+            <Input type="text" name="firstName" label="First Name" onChange={this.handleFormData}/>
+            <Input type="text" name="lastName" label="Last Name" onChange={this.handleFormData}/>
+            <Input type="email" name="email" label="Email Address" onChange={this.handleFormData}/>
+            <Input type="password" name="password" label="Password" onChange={this.handleFormData}/>
+            <Input type="password" name="confirm" label="Confirm Password" onChange={this.handleFormData}/>
           </div>
           <div class="flex-row-spread">
             <Button value="Cancel" />
