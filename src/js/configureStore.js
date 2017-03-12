@@ -1,18 +1,18 @@
 import { createStore, compose, applyMiddleware } from 'redux'
-import { persistStore, autoRehydrate } from 'redux-persist'
+// import { persistStore, autoRehydrate }  from 'redux-persist'
 import thunk from 'redux-thunk'
 import rootReducer from './reducers'
 
 const configureStore = (preloadedState) => {
-  const enhancer = compose(
-    applyMiddleware(thunk),
-    autoRehydrate()
-  );
+  // const enhancer = compose(
+  //   applyMiddleware(thunk),
+  //   autoRehydrate()
+  // );
 
   const store = createStore(
     rootReducer,
     preloadedState,
-    enhancer
+    applyMiddleware(thunk),
   );
 
   if (module.hot) {
@@ -26,6 +26,6 @@ const configureStore = (preloadedState) => {
   return store
 }
 
-persistStore(configureStore);
+// persistStore(configureStore);
 
 export default configureStore
