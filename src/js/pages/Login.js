@@ -1,8 +1,9 @@
 import React, { Component }       from 'react';
 import Input                      from '../components/forms/Input';
 import Button                     from '../components/forms/Button';
-import axios                      from 'axios';
-import cookie                     from 'react-cookie';
+import { connect }                from 'react-redux';
+
+import { login }                  from '../actions/authentication';
 
 class Login extends React.Component {
   constructor(props) {
@@ -27,15 +28,9 @@ class Login extends React.Component {
     if ((form.password === '') || (form.email === '')) {
       console.log('bad info', form);
     } else {
-      axios.post('/api/user/login', form)
-        .then(response => this.handleSuccess(response.data.token))
-        .catch(error => console.log(error))
+      console.log(form.email);
+      this.props.login(form.email, form.password);
     }
-  }
-
-  handleSuccess = (token) => {
-    cookie.save('Token', token, { path: '/' });
-    this.context.router.push('/')
   }
 
   render = () => {
@@ -57,8 +52,12 @@ class Login extends React.Component {
   }
 };
 
-Login.contextTypes = {
-  router: React.PropTypes.object
-};
+function mapStateToProps(state) {
+  return {
+    errorMessage: state.authentication.error,
+    message: state.authentication.message,
+    authenticated: state.authentication.authenticated,
+  };
+}
 
-export default Login;
+export default connect(mapStateToProps, { login })(Login);

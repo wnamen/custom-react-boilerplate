@@ -3,6 +3,8 @@ import Input                      from '../components/forms/Input';
 import Button                     from '../components/forms/Button';
 import axios                      from 'axios';
 import cookie                     from 'react-cookie';
+import { connect }                from 'react-redux';
+import { signup }                 from '../actions/authentication';
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -28,15 +30,8 @@ class SignUp extends React.Component {
     let form = this.state.formData;
 
     if (form.password === form.confirm) {
-      axios.post('/api/user/signup', form)
-        .then(response => this.handleSuccess(response.data.token))
-        .catch(error => console.log(error))
+      this.props.signup(form.firstName, form.lastName, form.email, form.password)
     }
-  }
-
-  handleSuccess = (token) => {
-    cookie.save('Token', token, { path: '/' });
-    this.context.router.push('/')
   }
 
   render = () => {
@@ -61,8 +56,12 @@ class SignUp extends React.Component {
   }
 };
 
-SignUp.contextTypes = {
-  router: React.PropTypes.object
-};
+function mapStateToProps(state) {
+  return {
+    errorMessage: state.authentication.error,
+    message: state.authentication.message,
+    authenticated: state.authentication.authenticated,
+  };
+}
 
-export default SignUp;
+export default connect(mapStateToProps, { signup })(SignUp);

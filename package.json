@@ -13,7 +13,8 @@
     "passport": "^0.3.2",
     "passport-jwt": "^2.2.1",
     "passport-local": "^1.0.0",
-    "react-cookie": "^1.0.4"
+    "react-cookie": "^1.0.4",
+    "redux-persist": "^4.4.2"
   },
   "scripts": {
     "start": "nodemon server.js"

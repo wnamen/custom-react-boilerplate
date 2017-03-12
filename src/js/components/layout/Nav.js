@@ -1,5 +1,6 @@
 import React, { Component }           from 'react';
 import { IndexLink }                  from 'react-router';
+import cookie                         from 'react-cookie';
 
 class Nav extends React.Component {
   constructor(props) {
@@ -21,9 +22,9 @@ class Nav extends React.Component {
             </div>
             <div class="nav-right">
               <ul class="nav-links">
-                <li class="medium-horizontal-margin"><IndexLink to="/signup">Sign Up</IndexLink></li>
-                <li class="medium-horizontal-margin"><IndexLink to="/login">Login</IndexLink></li>
-                <li class="large-horizontal-margin nav-hover"><IndexLink class="black" to="/settings" activeClassName="active"><i class="gray-medium-2 fa fa-user-circle fa-2x" aria-hidden="true"></i></IndexLink></li>
+                { !cookie.load('Token') && <li class="medium-horizontal-margin"><IndexLink to="/signup">Sign Up</IndexLink></li> }
+                { !cookie.load('Token') && <li class="large-horizontal-margin"><IndexLink to="/login">Login</IndexLink></li> }
+                { cookie.load('Token') && <li class="large-horizontal-margin nav-hover"><IndexLink class="black" to="/settings" activeClassName="active"><i class="gray-medium-2 fa fa-user-circle fa-2x" aria-hidden="true"></i></IndexLink></li> }
               </ul>
             </div>
           </div>

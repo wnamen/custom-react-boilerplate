@@ -1,13 +1,19 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, compose, applyMiddleware } from 'redux'
+import { persistStore, autoRehydrate } from 'redux-persist'
 import thunk from 'redux-thunk'
 import rootReducer from './reducers'
 
 const configureStore = (preloadedState) => {
+  const enhancer = compose(
+    applyMiddleware(thunk),
+    autoRehydrate()
+  );
+
   const store = createStore(
     rootReducer,
     preloadedState,
-    applyMiddleware(thunk)
-  )
+    enhancer
+  );
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
@@ -19,5 +25,7 @@ const configureStore = (preloadedState) => {
 
   return store
 }
+
+persistStore(configureStore);
 
 export default configureStore
