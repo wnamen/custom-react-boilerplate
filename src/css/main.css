@@ -33,6 +33,18 @@ a{
 strong{
   font-weight: 700 !important;
 }
+
+.login-btn {
+  border: none;
+  height: 2em;
+  background-color: #d7f1fb;
+}
+/*button.medium-horizontal-margin :hover {
+  background-color: #fff;
+  -webkit-transition: background-color .5s, opacity .5s;
+  transition: background-color .5s, opacity .5s;
+}*/
+
 .page-container {
   margin-top: 2em;
 }

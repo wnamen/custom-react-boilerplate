@@ -12,7 +12,7 @@ class Button extends React.Component {
 
   render = () => {
     return (
-      <button class="medium-horizontal-margin" onClick={this._buttonClicked}>
+      <button class="login-btn medium-horizontal-margin" onClick={this._buttonClicked}>
         { this.props.value }
       </button>
     )
